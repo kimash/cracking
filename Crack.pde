@@ -1,4 +1,6 @@
-//use Perlin noise to give you a randomly generated angle - cos x, sin y or vice versa
+//can also use Perlin noise to give a randomly generated angle - cos x, sin y or vice versa
+float crackSize = 1000;
+
 class Crack
 {
   ArrayList <PVector> segment;
@@ -31,4 +33,12 @@ class Crack
      endShape();
    }
   
+    void split()  //split the cracks
+    {
+      if (segment.size() > crackSize)  
+        {
+          segment.add();
+          crackSize /= 3;
+        }
+    }
 }

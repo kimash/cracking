@@ -1,5 +1,5 @@
 //can also use Perlin noise to give a randomly generated angle - cos x, sin y or vice versa
-float crackSize = 1000;
+float segSize = 100;
 
 class Crack
 {
@@ -12,6 +12,7 @@ class Crack
   {
     pos = new PVector(x,y); 
     segment = new ArrayList<PVector>();
+    
   }
 
    void display()
@@ -31,14 +32,27 @@ class Crack
        vertex(v.x,v.y); 
      }
      endShape();
-   }
+        }
+   
   
     void split()  //split the cracks
     {
-      if (segment.size() > crackSize)  
+      
+      if (pos.y < 0 || pos.x < 0 || pos.x > width)  //when crack continues offscreen
         {
-          segment.add();
-          crackSize /= 3;
+//      if (segment.size() > segSize)  
+//        {
+          
+           PVector middle = segment.get(segment.size()/2);
+           //segment.add(middle);
+           ellipse(middle.x, middle.y, 16, 16);
+           
+           
+          //segSize /= 3;
+          //segSize = segment.size();
+          
+          
         }
     }
+    
 }

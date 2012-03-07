@@ -1,4 +1,4 @@
-//Kim Ash
+//Kim Ash & Sheiva Rezvani
 //builds a system of cracks
 
 Crack cStart;
@@ -13,7 +13,7 @@ void setup()
   cracks = new ArrayList<Crack>();
   cStart = new Crack(width/2, height);  //need starting crack, and then build off from there --> may not need this
   cracks.add(cStart);
- 
+ //stroke(255, 255, 255, 20);
 }
 
 
@@ -24,7 +24,9 @@ void draw()
   
   for(Crack c : cracks) 
   {
+    
     c.display();
+    c.split();
   }
   //PVector middle = crack.get(crack.size()/2);
   //PVector end = crack.get(crack.size()-1);
@@ -41,3 +43,5 @@ void draw()
 //      crackSize /= 3;
 //    }
 //  }
+
+

@@ -13,7 +13,6 @@ void setup()
   cracks = new ArrayList<Crack>();
   cStart = new Crack(width/2, height);  //need starting crack, and then build off from there --> may not need this
   cracks.add(cStart);
- //stroke(255, 255, 255, 20);
 }
 
 
@@ -24,24 +23,9 @@ void draw()
   
   for(Crack c : cracks) 
   {
-    
     c.display();
-    c.split();
+    c.stop();
   }
   //PVector middle = crack.get(crack.size()/2);
   //PVector end = crack.get(crack.size()-1);
 }
-
-//use crack.size() to determine when to branch - set up init var for crackSize
-//crack splitting function
-
-//void split()
-//{
-//   if (c.size() > crackSize)  
-//    {
-//      cracks.add();
-//      crackSize /= 3;
-//    }
-//  }
-
-
